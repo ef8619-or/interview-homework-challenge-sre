@@ -48,3 +48,9 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/osx,linux
 
 SCORECARD_TEMPLATE.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
