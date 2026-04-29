@@ -7,3 +7,33 @@
 # - resources (optional)
 #
 # Hint: The Python server listens on port 8080
+nameOverride: ""
+fullnameOverride: ""
+
+labels: {}
+
+deployment:
+  replicaCount: 1
+
+  container:
+    image:
+      repository: ghcr.io/ef8619-or/orcrist-challenge-3
+      tag: latest
+      pullPolicy: Always
+
+    port: 8080
+    portName: http
+
+    resources:
+      requests:
+        cpu: 5m
+        memory: 128Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+
+service:
+  type: ClusterIP
+  port: 80
+  protocol: TCP
+  portName: http

@@ -2,6 +2,10 @@
 # which is a minimal and lightweight distribution. This will help us keep our Docker image small and efficient. We will set the working directory to /app, copy our server.py file into the container, expose port 8080 for our server to listen on, and finally, we will specify the command to run our server when the container starts.
 FROM python:alpine
 
+# Addition for challenge-5: we need to add a label to be able to push the built image
+# to ghcr.io registry. We need to rebuilt the image for challenge-5, but it will not affect the previous challenges.
+LABEL org.opencontainers.image.source=https://github.com/ef8619-or/interview-homework-challenge-sre
+
 # A good practice is to use a separate directory for the application
 WORKDIR /app
 
